@@ -6,18 +6,36 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // TODO: Read the integer N
-        
-        // TODO: Create a LinkedList of Integers
-        
-        // TODO: Read N integers and add them to the LinkedList
-        
-        // TODO: Create a ListIterator for the LinkedList
-        
-        // TODO: Traverse the list in the forward direction and print the elements
-        
-        // TODO: Traverse the list in the backward direction and print the elements
-        
-        
+        int n = scanner.nextInt();
+
+        LinkedList<Integer> list = new LinkedList<>();
+
+        for (int i = 0; i < n; i++) {
+            if (scanner.hasNextInt()) {
+                list.add(scanner.nextInt());
+            }
+        }
+
+        ListIterator<Integer> iterator = list.listIterator();
+
+        System.out.print("Forward: ");
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next());
+            if (iterator.hasNext()) {
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
+
+        System.out.print("Backward: ");
+        while (iterator.hasPrevious()) {
+            System.out.print(iterator.previous());
+            if (iterator.hasPrevious()) {
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
+
+        scanner.close();
     }
 }
